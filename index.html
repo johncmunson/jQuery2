@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Listo</title>
+	<title>List</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="styles/base/reset.css">
 	<link rel="stylesheet" href="styles/base/fonts.css">
@@ -9,7 +9,8 @@
 </head>
 <body>
 <main class="main-wrapper">
-	<!--MAIN HEADER -->
+
+	<!--header-->
 	<section>
 		<header class="main-page-header">
 			<div class="logo-container">
@@ -21,29 +22,45 @@
 		</header>
 	</section>
 
-	<!-- to-do main container -->
+	<!--to-do main container-->
 	<section class="todo-main-container">
-		<div
-		class="progress-box"
-		id="newList">
+		<div class="progress-box" id="newList">
 			<h3>New To Dos</h3>
 		</div>
 
-		<!--Add progress-box from the reademe-->
+		<!--add progress-box from the reademe-->
+        <div class="progress-box">
+            <h3>In Progress</h3>
+            <ul class="list-group" id="currentList"></ul>
+        </div>
+        <div>
+        </div>
+        <div class="progress-box">
+            <h3>Complete</h3>
+            <ul class="list-group" id="archivedList"></ul>
+        </div>
 	</section>
 
-	<!-- FORM -->
-	<!--Add new task form here -->
+	<!--form-->
+    <section id="newTaskForm">
+        <h3 class="todo-form-title">New To Do </h3>
+        <div  class="form-input-container">
+            <img id="cancel" src="./img/icons/cross.png" alt="close form icon">
+            <input id="newItemInput" class="todo-title-input form-input" type="text" placeholder="To-Do Title">
+            <button id="saveNewItem" class="complete-todo-button">Add To Do</button>
+        </div>
+    </section>
 
-	<!-- FOOTER -->
+	<!--footer-->
 	<footer class="todo-footer">
 		<img id="add-todo" class="add-todo-button show-add-todo" src="./img/icons/add-button.png" alt="add new todo">
 	</footer>
 
-
 	<!--jQuery-->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<!--INclude your script file here -->
+    <!--Scripts-->
+	<script src="./app/scripts/scripts.js" type="text/javascript"></script>
+
 </main>
 </body>
 </html>

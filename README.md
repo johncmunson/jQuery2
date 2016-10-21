@@ -11,7 +11,7 @@ With this to-do app, users will be able to:
 
 * Create new todo items.
 
-* Move the items from 'New' to 'In Progress' to 'Archived' to deleted
+* Move the items from 'New' to 'In Progress' to 'Archived' to 'Deleted'
 * Save list items to our browser's local storage so that it persists, even if we close the browser
 
 ![alt text](https://github.com/DevMountain/jQuery2/blob/master/jQuery2%20Example.png?raw=true, "Title Text")
@@ -269,15 +269,15 @@ We need to include this function in our code. We will refer to this function in 
 *scripts.js*
 ```javascript
 var advanceTask = function(task) {
-  var modified = task.innerText.trim()
-  for (var i = 0; i < listo.length; i++) {
-    if (listo[i].task === modified) {
-      if (listo[i].id === 'new') {
-        listo[i].id = 'inProgress';
-      } else if (listo[i].id === 'inProgress') {
-        listo[i].id = 'archived';
+  var modified = task.innerText.trim();
+  for (var i = 0; i < list.length; i++) {
+    if (list[i].task === modified) {
+      if (list[i].id === 'new') {
+        list[i].id = 'inProgress';
+      } else if (list[i].id === 'inProgress') {
+        list[i].id = 'archived';
       } else {
-        listo.splice(i, 1);
+        list.splice(i, 1);
       }
       break;
     }
@@ -329,7 +329,7 @@ The last thing this function needs is the ability to move the actual list item. 
 ```javascript
 $(document).on('click', '#item', function(e) {
 	e.preventDefault();
-  var task = this;		
+  var task = this;
   advanceTask(task);
   this.id = 'inProgress';
   $('#currentList').append(this.outerHTML);
